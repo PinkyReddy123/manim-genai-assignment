@@ -79,6 +79,12 @@ Strict rules:
 - Keep the animation self-contained: no external file/network/image loads.
 - Prefer simple, robust Manim objects (Text, MathTex, Circle, Square,
   Create, Write, FadeIn/FadeOut, Transform) so the code reliably renders.
+- If you use a rate_func, ONLY use these exact names, unprefixed:
+  linear, smooth, there_and_back, rush_into, rush_from, double_smooth.
+  Do NOT use names like ease_in_quad, ease_out_sine, etc. — they require
+  a module prefix and will cause a NameError. When in doubt, omit
+  rate_func entirely and let Manim use its default.
+
 """
 
 

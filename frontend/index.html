@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animatrix — Prompt to Animation</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 640px;
+      margin: 60px auto;
+      padding: 0 20px;
+      color: #222;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+    p.subtitle {
+      color: #666;
+      margin-top: 0;
+    }
+    #prompt-input {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #generate-btn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+    }
+    #generate-btn:disabled {
+      background: #93c5fd;
+      cursor: not-allowed;
+    }
+    #status-text {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: #444;
+      min-height: 1.2em;
+    }
+    #status-text.error {
+      color: #dc2626;
+    }
+    #result-video {
+      display: none;
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Animatrix</h1>
+  <p class="subtitle">Describe an animation. We'll generate and render it.</p>
+
+  <input
+    type="text"
+    id="prompt-input"
+    placeholder="e.g. Animate a blue circle transforming into a red square"
+  />
+
+  <br />
+
+  <button id="generate-btn">Generate!</button>
+
+  <div id="status-text"></div>
+
+  <video id="result-video" controls></video>
+
+  <script src="script.js"></script>
+</body>
+</html>
